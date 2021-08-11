@@ -12,7 +12,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   font-family: "Helvetica Neue";
   font-size: 1rem;
   font-weight: 300;
@@ -23,13 +22,13 @@ body {
   background-size: auto;
   margin-top: 2.1875rem;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (min-width: 23.75em) {
   body {
     font-size: 1rem;
     background-image: url("../images/desktopbg.svg");
-    background-repeat: initial;
     background-size: auto;
   }
 }
@@ -79,6 +78,18 @@ h2 {
 @media (min-width: 64em) {
   h2 {
     font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 64em) {
+  h3 {
+    color: white;
   }
 }
 
@@ -141,16 +152,36 @@ section p {
   font-size: 1.0625rem;
 }
 
-section .profile__pic {
+section .profile-pic {
   height: 31.1875rem;
   width: 21.5rem;
   position: absolute;
-  left: 4.1rem;
-  top: 12.60rem;
+  margin-top: 0.65rem;
 }
 
-section .profile__pic img {
-  width: 100%;
+section .profile-pic img {
+  position: relative;
   height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section .cbar {
+  margin-top: 5.5rem;
+}
+
+section .cbar span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+section .contact {
+  margin-top: 1rem;
+}
+
+section .contact .info {
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,7 +11,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     font-family: "Helvetica Neue";
     font-size: $font-sm;
     font-weight: $light;
@@ -22,11 +21,11 @@ body {
     background-size: auto;
     margin-top: 2.1875rem;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 
     @include breakpoints-up(small) {
         font-size: $font-sm;
         background-image: $bg-desktop;
-        background-repeat:initial;
         background-size: auto;
     }
 
@@ -70,6 +69,16 @@ h2 {
 
     @include breakpoints-up(large) {
         font-size: $font-xl;
+    }
+}
+
+h3 {
+    font-size: $font-md;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+
+    @include breakpoints-up(large) {
+        color: white;
     }
 }
 
@@ -122,16 +131,35 @@ section {
         font-size: $font-sm + 0.0625;
     }
 
-    .profile__pic {
+    .profile-pic {
         height: 31.1875rem;
         width: 21.5rem;
         position: absolute;
-        left: 4.1rem;
-        top: 12.60rem;
+        margin-top: 0.65rem;
 
         img {
-            width: 100%;
+            position: relative;
             height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .cbar {
+        margin-top: 5.5rem;
+
+        span {
+            font-size: $font-sm;
+            font-weight: $bold;
+            color: $black;
+        }
+    }
+
+    .contact {
+        margin-top: 1rem;
+
+        .info {
+            margin-bottom: 1rem;
         }
     }
 }
