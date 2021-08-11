@@ -1,0 +1,24 @@
+// Color palette
+
+$white: rgb(255, 255, 255);
+$greenShade: rgb(30, 157, 157);
+$black: rgb(0, 0, 0);
+$grey: rgb(112, 112, 112);
+$mblack: rgba(0, 0, 0, 0.5);
+
+// Font size
+
+$font-sm: 1rem; // 16px
+$font-md: 1.125rem; // 18px
+$font-l: 1.25rem; // 20px
+$font-xl: 1.5rem; // 24px
+$font-xlg: 5rem; // 80px
+
+// Font weight
+$light: 300;
+$medium: 500;
+$bold: 700;
+
+// Background image
+$bg-desktop: url("../images/desktopbg.svg");
+$bg-mobile: url("../images/mobilebg.svg");
