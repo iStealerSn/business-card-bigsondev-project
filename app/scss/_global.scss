@@ -16,6 +16,7 @@ body {
     font-weight: $light;
     color: $black;
     line-height: 1.3;
+    position: relative;
     background-image: $bg-mobile;
     background-repeat: no-repeat;
     background-size: auto;
@@ -46,7 +47,7 @@ h1, h2, h3 {
 
 p {
     margin: 0;
-    font-size: $font-sm;
+    font-size: $font-sm + 0.0625;
 
     @include breakpoints-up(large) {
         font-size: $font-l;
@@ -57,9 +58,11 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     margin-top: 0.875rem;
+    height: 3rem;
 
     @include breakpoints-up(large) {
         font-size: $font-xlg;
+        height: auto;
     }
 }
 
@@ -75,7 +78,7 @@ h2 {
 h3 {
     font-size: $font-md;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 
     @include breakpoints-up(large) {
         color: white;
@@ -84,11 +87,12 @@ h3 {
 
 .container {
     margin-left: 6.4vw; // 24px
-    margin-right: 2.25rem; // 36px
+    max-width: 1366px;
 
-    @include breakpoints-up(large) {
+    @include breakpoints-up(medium) {
         margin-left: 6.22vw; //85px
-        margin-right: 7.1875rem; //115px
+        max-width: 1366px;
+
     }
 }
 
@@ -106,9 +110,28 @@ h3 {
         justify-content: center;
     }
 
+    &-ac-c {
+        align-content: center;
+    }
+
     &-ai-c {
         align-items: center;
     }
+}
+
+.social-icon {
+    height: 24px;
+    width: 24px;
+    margin-right: 1rem;
+
+    @include breakpoints-up(medium) {
+        margin-bottom: 2.5625rem;
+        margin-right: 0;
+    }
+}
+
+.lg { // Helper class to set height of icons
+    height: 15px;
 }
 
 header {
@@ -119,16 +142,24 @@ header {
 }
 
 section {
-    position: relative;
 
     span {
         color: $greenShade;
         font-weight: $medium;
+        font-size: $font-md;
     }
 
-    p {
+    > h1 {
+        margin-top: 1.2rem;
+    }
+
+    > p {
         width: 250px;
-        font-size: $font-sm + 0.0625;
+        height: 39px;
+
+        @include breakpoints-up(large) {
+            width: 350px;
+        }
     }
 
     .profile-pic {
@@ -160,6 +191,56 @@ section {
 
         .info {
             margin-bottom: 1rem;
+        }
+    }
+}
+
+footer {
+    margin-top: 14rem;
+    margin-left: 6.4vw; // 24px
+    display: flex;
+    align-content: center;
+
+    @include breakpoints-up(medium) {
+        position: absolute;
+        right: 7.1875rem;
+        bottom: -4.3125rem;
+        margin: 0;
+        flex-direction: column;
+        width: 1.5rem;
+    }
+    
+    .fbar {
+        color: white;
+        margin-right: 2.2rem;
+
+        @include breakpoints-up(medium) {
+            flex-direction: column;
+            margin-bottom: 2.25rem;
+            height: 200px;
+        }
+
+        .ftext {
+            font-size: 1rem;
+            font-weight: $bold;
+            margin-right: 1rem;
+
+            @include breakpoints-up(medium) {
+                transform: rotate(90deg);
+
+            }
+        }
+
+        > .hline {
+            border: 1px solid white;
+            transform: rotate(90deg);
+        }
+    }
+
+    .social-links {
+
+        @include breakpoints-up(medium) {
+            flex-direction: column;
         }
     }
 }
